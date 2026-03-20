@@ -1,6 +1,6 @@
 import Image from "next/image";
 import {
-  BadgePercent,
+ Tag,
   CheckCircle2,
   ChevronRight,
   Clock3,
