@@ -16,6 +16,7 @@
   "dependencies": {
     "date-fns": "^3.3.1",
 "react-day-picker": "^8.10.1",
+"@radix-ui/react-popover": "^1.0.7",
 
     "@hookform/resolvers": "^3.3.4",
     "@radix-ui/react-label": "^2.0.2",
