@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useRef, useEffect } from "react";
@@ -31,10 +30,14 @@ export default function NavDropdown({ label, items }: NavDropdownProps) {
   }, []);
 
   return (
-    <div ref={ref} className="relative">
+    <div ref={ref} className="relative inline-block">
       <button
-        onClick={() => setOpen(!open)}
-        className="flex items-center gap-1 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium text-sm"
+        onClick={() => setOpen((prev) => !prev)}
+        className="relative z-10 flex items-center gap-1 rounded-md border border-transparent 
+                   bg-white px-3 py-2 text-sm font-medium text-gray-700 
+                   shadow-sm transition-colors duration-200 
+                   hover:text-blue-600 focus:outline-none 
+                   focus:border-blue-500 focus:ring focus:ring-blue-300 focus:ring-opacity-40"
       >
         {label}
         <ChevronDown
@@ -44,20 +47,22 @@ export default function NavDropdown({ label, items }: NavDropdownProps) {
       </button>
 
       {open && (
-        <div className="absolute top-full left-0 mt-2 w-52 rounded-xl bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black/5 dark:ring-white/10 z-50">
-          <div className="py-2">
-            {items.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-150"
-              >
-                {item.icon && <span>{item.icon}</span>}
-                {item.label}
-              </Link>
-            ))}
-          </div>
+        <div
+          className="absolute right-0 z-20 mt-2 w-56 origin-top-right rounded-md 
+                     bg-white py-2 text-sm shadow-xl transition-transform"
+        >
+          {items.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setOpen(false)}
+              className="block px-4 py-3 capitalize text-gray-600 
+                         transition-colors duration-300 
+                         hover:bg-gray-100 hover:text-gray-900"
+            >
+              {item.icon ? `${item.icon} ${item.label}` : item.label}
+            </Link>
+          ))}
         </div>
       )}
     </div>
