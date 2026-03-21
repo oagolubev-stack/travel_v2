@@ -1,4 +1,4 @@
-import { Header } from "@/components/header";
+import Navbar from "@/components/Navbar/Navbar";
 import { Footer } from "@/components/footer";
 
 export default function PublicLayout({
@@ -8,7 +8,7 @@ export default function PublicLayout({
 }) {
   return (
     <>
-      <Header />
+      <Navbar />
       <main className="min-h-screen">{children}</main>
       <Footer />
     </>
