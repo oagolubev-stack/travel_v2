@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, Phone } from "lucide-react";
 import NavDropdown from "@/components/Navbar/NavDropdown";
 import { destinations, travelStyles, proTours } from "@/components/Navbar/navConfig";
@@ -12,14 +13,17 @@ export default function Navbar() {
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* header высотой ~56px */}
         <div className="flex h-14 items-center justify-between">
-          {/* h-14 ~= 56px */}
-
-          {/* Логотип — позже заменим на реальную картинку 275x48 */}
+          {/* Логотип 275x48 */}
           <Link href="/" className="flex items-center">
-            <span className="text-xl font-bold text-blue-600">
-              2 ШЕЗЛОНГА
-            </span>
+            <Image
+              src="/images/logo/logo-main.png"
+              alt="TravelV2"
+              width={275}
+              height={48}
+              priority
+            />
           </Link>
 
           {/* Десктоп меню */}
@@ -53,7 +57,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Бургер */}
+          {/* Бургер для мобилы */}
           <button
             className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
