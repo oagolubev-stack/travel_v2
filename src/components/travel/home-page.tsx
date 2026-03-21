@@ -1,6 +1,6 @@
 import Image from "next/image";
 import {
- BadgePercent,
+  BadgePercent,
   CheckCircle2,
   ChevronRight,
   Clock3,
@@ -15,8 +15,13 @@ import { destinations, offers, reviews, stats } from "@/data/mock-tours";
 export function HomePage() {
   return (
     <main className="bg-slate-50 text-slate-900">
-      <section className="relative overflow-hidden bg-gradient-to-br from-sky-600 via-cyan-500 to-sky-700">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.22),transparent_30%)]" />
+      <section
+        className="relative overflow-hidden bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.8)), url('https://images.pexels.com/photos/3408353/pexels-photo-3408353.jpeg?auto=compress&cs=tinysrgb&w=1600')",
+        }}
+      >
         <div className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8 lg:pb-24 lg:pt-16">
           <div className="max-w-3xl">
             <span className="inline-flex rounded-full bg-white/15 px-4 py-1 text-sm font-medium text-white backdrop-blur">
@@ -42,7 +47,7 @@ export function HomePage() {
             {stats.map((item) => (
               <div
                 key={item.label}
-                className="rounded-2xl border border-white/15 bg-white/10 p-4 text-white backdrop-blur"
+                className="rounded-2xl border border-white/20 bg-white/10 p-4 text-white backdrop-blur"
               >
                 <div className="text-2xl font-bold">{item.value}</div>
                 <div className="mt-1 text-sm text-sky-50">{item.label}</div>
