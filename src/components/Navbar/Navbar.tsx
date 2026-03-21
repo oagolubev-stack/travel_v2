@@ -15,16 +15,19 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* header высотой ~56px */}
         <div className="flex h-14 items-center justify-between">
-          {/* Логотип 275x48 */}
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/images/logo/logo-main.png"
-              alt="TravelV2"
-              width={275}
-              height={48}
-              priority
-            />
-          </Link>
+        
+         {/* Логотип 275x48 с адаптивом */}
+<Link href="/" className="flex items-center h-12 w-44 overflow-hidden">
+  <Image
+    src="/images/logo/logo-main.png"
+    alt="TravelV2"
+    width={275}
+    height={48}
+    className="h-full w-auto object-contain"
+    priority
+  />
+</Link>
+
 
           {/* Десктоп меню */}
           <div className="hidden md:flex items-center gap-4">
