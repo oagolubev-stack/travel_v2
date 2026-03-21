@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -11,26 +10,27 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className="bg-white shadow-sm sticky top-0 z-50">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-14 items-center justify-between">
+          {/* h-14 ~= 56px */}
 
-          {/* Логотип */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-blue-600 dark:text-blue-400">
+          {/* Логотип — позже заменим на реальную картинку 275x48 */}
+          <Link href="/" className="flex items-center">
+            <span className="text-xl font-bold text-blue-600">
               ✈ TravelV2
             </span>
           </Link>
 
           {/* Десктоп меню */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-4">
             <NavDropdown label="Всё включено" items={destinations} />
             <NavDropdown label="Раннее бронирование" items={destinations} />
             <NavDropdown label="Стиль отдыха" items={travelStyles} />
             <NavDropdown label="PROтуры" items={proTours} />
             <Link
               href="/contacts"
-              className="text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
             >
               Контакты
             </Link>
@@ -40,14 +40,14 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <a
               href="tel:+78001234567"
-              className="flex items-center gap-1.5 text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors"
+              className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-blue-600 transition-colors"
             >
               <Phone size={15} />
               8-800-123-45-67
             </a>
             <Link
               href="/search"
-              className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-colors duration-200"
+              className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-colors"
             >
               Найти тур
             </Link>
@@ -55,7 +55,7 @@ export default function Navbar() {
 
           {/* Бургер */}
           <button
-            className="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Открыть меню"
           >
@@ -66,13 +66,13 @@ export default function Navbar() {
 
       {/* Мобильное меню */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-4 space-y-1">
+        <div className="md:hidden border-t border-gray-100 bg-white px-4 py-4 space-y-1">
           {[
             { label: "Всё включено", items: destinations },
             { label: "Раннее бронирование", items: destinations },
           ].map(({ label, items }) => (
             <details key={label} className="group">
-              <summary className="flex items-center justify-between py-2.5 text-sm font-medium text-gray-700 dark:text-gray-200 cursor-pointer list-none">
+              <summary className="flex items-center justify-between py-2.5 text-sm font-medium text-gray-700 cursor-pointer list-none">
                 {label}
                 <span className="transition-transform group-open:rotate-180">▾</span>
               </summary>
@@ -82,7 +82,7 @@ export default function Navbar() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block py-1.5 text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                    className="block py-1.5 text-sm text-gray-600 hover:text-blue-600"
                   >
                     {item.label}
                   </Link>
@@ -92,7 +92,7 @@ export default function Navbar() {
           ))}
 
           <details className="group">
-            <summary className="flex items-center justify-between py-2.5 text-sm font-medium text-gray-700 dark:text-gray-200 cursor-pointer list-none">
+            <summary className="flex items-center justify-between py-2.5 text-sm font-medium text-gray-700 cursor-pointer list-none">
               Стиль отдыха
               <span className="transition-transform group-open:rotate-180">▾</span>
             </summary>
@@ -102,7 +102,7 @@ export default function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 py-1.5 text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                  className="flex items-center gap-2 py-1.5 text-sm text-gray-600 hover:text-blue-600"
                 >
                   {item.icon} {item.label}
                 </Link>
@@ -111,7 +111,7 @@ export default function Navbar() {
           </details>
 
           <details className="group">
-            <summary className="flex items-center justify-between py-2.5 text-sm font-medium text-gray-700 dark:text-gray-200 cursor-pointer list-none">
+            <summary className="flex items-center justify-between py-2.5 text-sm font-medium text-gray-700 cursor-pointer list-none">
               PROтуры
               <span className="transition-transform group-open:rotate-180">▾</span>
             </summary>
@@ -121,7 +121,7 @@ export default function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block py-1.5 text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                  className="block py-1.5 text-sm text-gray-600 hover:text-blue-600"
                 >
                   {item.label}
                 </Link>
@@ -132,7 +132,7 @@ export default function Navbar() {
           <Link
             href="/contacts"
             onClick={() => setMobileOpen(false)}
-            className="block py-2.5 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600"
+            className="block py-2.5 text-sm font-medium text-gray-700 hover:text-blue-600"
           >
             Контакты
           </Link>
