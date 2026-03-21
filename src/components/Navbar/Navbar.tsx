@@ -18,7 +18,7 @@ export default function Navbar() {
           {/* Логотип — позже заменим на реальную картинку 275x48 */}
           <Link href="/" className="flex items-center">
             <span className="text-xl font-bold text-blue-600">
-              ✈ TravelV2
+              2 ШЕЗЛОНГА
             </span>
           </Link>
 
