@@ -1,4 +1,3 @@
-
 export const destinations = [
   { label: "Египет", href: "/destinations/egypt" },
   { label: "Турция", href: "/destinations/turkey" },
