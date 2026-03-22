@@ -1,6 +1,6 @@
 import Image from "next/image";
 import {
- BadgePercent,
+  BadgePercent,
   CheckCircle2,
   ChevronRight,
   Clock3,
@@ -10,47 +10,45 @@ import {
 } from "lucide-react";
 
 import { SearchBar } from "@/components/travel/search-bar";
+import { Hero } from "@/components/travel/hero";
 import { destinations, offers, reviews, stats } from "@/data/mock-tours";
 
 export function HomePage() {
   return (
     <main className="bg-slate-50 text-slate-900">
-      <section className="relative overflow-hidden bg-gradient-to-br from-sky-600 via-cyan-500 to-sky-700">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.22),transparent_30%)]" />
-        <div className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8 lg:pb-24 lg:pt-16">
-          <div className="max-w-3xl">
-            <span className="inline-flex rounded-full bg-white/15 px-4 py-1 text-sm font-medium text-white backdrop-blur">
-              Онлайн-поиск туров по популярным направлениям
-            </span>
+      <Hero>
+        <div className="max-w-3xl">
+          <span className="inline-flex rounded-full bg-white/15 px-4 py-1 text-sm font-medium text-white backdrop-blur">
+            Онлайн-поиск туров по популярным направлениям
+          </span>
 
-            <h1 className="mt-5 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Найди идеальный тур за пару минут
-            </h1>
+          <h1 className="mt-5 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Найди идеальный тур за пару минут
+          </h1>
 
-            <p className="mt-4 max-w-2xl text-base text-sky-50 sm:text-lg">
-              Удобный поиск туров, понятные цены, подбор отелей по рейтингу,
-              питанию и бюджету. Подходит для классического турагентства и
-              онлайн-продаж.
-            </p>
-          </div>
-
-          <div className="mt-8 max-w-6xl">
-            <SearchBar />
-          </div>
-
-          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
-            {stats.map((item) => (
-              <div
-                key={item.label}
-                className="rounded-2xl border border-white/15 bg-white/10 p-4 text-white backdrop-blur"
-              >
-                <div className="text-2xl font-bold">{item.value}</div>
-                <div className="mt-1 text-sm text-sky-50">{item.label}</div>
-              </div>
-            ))}
-          </div>
+          <p className="mt-4 max-w-2xl text-base text-sky-50 sm:text-lg">
+            Удобный поиск туров, понятные цены, подбор отелей по рейтингу,
+            питанию и бюджету. Подходит для классического турагентства и
+            онлайн-продаж.
+          </p>
         </div>
-      </section>
+
+        <div className="mt-8 max-w-6xl">
+          <SearchBar />
+        </div>
+
+        <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
+          {stats.map((item) => (
+            <div
+              key={item.label}
+              className="rounded-2xl border border-white/20 bg-white/10 p-4 text-white backdrop-blur"
+            >
+              <div className="text-2xl font-bold">{item.value}</div>
+              <div className="mt-1 text-sm text-sky-50">{item.label}</div>
+            </div>
+          ))}
+        </div>
+      </Hero>
 
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-end justify-between gap-4">
