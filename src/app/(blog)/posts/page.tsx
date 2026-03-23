@@ -26,24 +26,7 @@ export default function BlogHomePage() {
       <JsonLd data={buildFaqSchema(homeFaqs)} />
 
       {/* Hero */}
-      <section className="py-10 md:py-14">
-        <div className="max-w-2xl">
-          <div className="badge mb-3">Блог о туризме</div>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
-            Путеводитель по лучшим<br className="hidden md:block" /> курортам мира
-          </h1>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Честные обзоры, сравнения отелей и практичные советы от команды Pro Туры. Помогаем выбрать отдых, который запомнится.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <Link href="/destinations" className="btn-accent">Все курорты</Link>
-            <Link href="/hotels/compare/kemer"
-              className="border border-accent text-accent font-semibold px-5 py-2.5 rounded-lg hover:bg-accent-light transition-colors">
-              Сравнить отели
-            </Link>
-          </div>
-        </div>
-      </section>
+
 
       {/* Popular destinations */}
       <section className="py-8 border-t border-gray-200">
