@@ -18,6 +18,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        // shadcn/ui — не трогаем
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -40,7 +41,9 @@ module.exports = {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
+          DEFAULT: "#0064d2",       // ← перезаписываем под блог
+          hover: "#0052aa",         // ← новый
+          light: "#e8f0fd",         // ← новый
           foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
@@ -51,11 +54,25 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // блог — новые токены
+        brand: {
+          dark: "#1a1a2e",
+          gray: "#6b7280",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xl: "1rem",     // ← новый
+        "2xl": "1.5rem", // ← новый
+      },
+      boxShadow: {
+        card: "0 2px 12px rgba(0,0,0,.08)",           // ← новый
+        "card-hover": "0 8px 24px rgba(0,0,0,.14)",   // ← новый
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"], // ← новый
       },
       keyframes: {
         "accordion-down": {
