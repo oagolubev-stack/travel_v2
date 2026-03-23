@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Курорты", href: "/destinations" },
   { label: "Сравнение отелей", href: "/hotels/compare/kemer" },
   { label: "Лайфхаки", href: "/tips/general/egypt-tips-2026" },
-  { label: "Статьи", href: "/" },
+  { label: "Статьи", href: "/blog" },
 ];
 
 export function Header() {
