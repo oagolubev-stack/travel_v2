@@ -36,8 +36,8 @@ export default function BlogHomePage() {
             Честные обзоры, сравнения отелей и практичные советы от команды Pro Туры. Помогаем выбрать отдых, который запомнится.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/destinations" className="btn-accent">Все курорты</Link>
-            <Link href="/hotels/compare/kemer"
+            <Link href="/blog/destinations" className="btn-accent">Все курорты</Link>
+            <Link href="/blog/hotels/compare/kemer"
               className="border border-accent text-accent font-semibold px-5 py-2.5 rounded-lg hover:bg-accent-light transition-colors">
               Сравнить отели
             </Link>
@@ -49,13 +49,13 @@ export default function BlogHomePage() {
       <section className="py-8 border-t border-gray-200">
         <div className="flex items-center justify-between mb-6">
           <h2 className="section-title">Популярные курорты</h2>
-          <Link href="/destinations" className="text-accent text-sm font-medium flex items-center gap-1 hover:underline">
+          <Link href="/blog/destinations" className="text-accent text-sm font-medium flex items-center gap-1 hover:underline">
             Все курорты <ArrowRight size={14} />
           </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {destinations.slice(0, 3).map(dest => (
-            <Link key={dest.slug} href={`/destinations/${dest.countrySlug}/${dest.slug}`}
+            <Link key={dest.slug} href={`/blog/destinations/${dest.countrySlug}/${dest.slug}`}
               className="bg-white rounded-2xl shadow-card card-hover overflow-hidden group">
               <div className="relative h-48">
                 <Image src={dest.coverImage} alt={dest.name} fill className="object-cover group-hover:scale-105 transition-transform duration-300" sizes="(max-width: 640px) 100vw, 400px" />
@@ -87,7 +87,7 @@ export default function BlogHomePage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {articles.map(article => (
-            <Link key={article.slug} href={`/tips/${article.categorySlug}/${article.slug}`}
+            <Link key={article.slug} href={`/blog/tips/${article.categorySlug}/${article.slug}`}
               className="bg-white rounded-2xl shadow-card card-hover overflow-hidden flex flex-col group">
               <div className="relative h-44">
                 <Image src={article.coverImage} alt={article.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" sizes="400px" />
