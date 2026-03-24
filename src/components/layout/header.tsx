@@ -1,18 +1,26 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X, Globe, Search } from "lucide-react";
 
-const navLinks = [
-  { label: "Курорты", href: "/destinations" },
-  { label: "Сравнение отелей", href: "/hotels/compare/kemer" },
-  { label: "Лайфхаки", href: "/tips/general/egypt-tips-2026" },
-  { label: "Статьи", href: "/" },
-];
-
 export function Header() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  const navLinks = pathname.startsWith('/blog') 
+    ? [
+        { label: "Курорты", href: "/blog/destinations" },
+        { label: "Сравнение отелей", href: "/blog/hotels/compare/kemer" },
+        { label: "Лайфхаки", href: "/blog/tips/general/egypt-tips-2026" },
+        { label: "Статьи", href: "/blog" },
+      ]
+    : [
+        { label: "Всё включено", href: "/all-inclusive" },
+        { label: "Раннее бронирование", href: "/early-booking" },
+        { label: "Стиль отдыха", href: "/rest-types" },
+      ];
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
