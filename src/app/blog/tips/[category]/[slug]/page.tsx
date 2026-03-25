@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { articles } from '@/lib/data/articles';
 import { FaqBlock } from '@/components/widgets/faq-block';
 import { BudgetCalculator } from '@/components/widgets/budget-calculator';
-import { TipCalculator } from '@/components/widgets/tip-calculator';
 import { JsonLd, buildArticleSchema, buildFaqSchema, buildBreadcrumbSchema } from '@/components/seo/json-ld';
 import { buildMetadata } from '@/lib/seo';
 import { formatDate } from '@/lib/utils';
@@ -20,13 +19,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return buildMetadata({
     title: article.title,
     description: article.excerpt,
-    path: `/tips/${params.category}/${params.slug}`,
+    path: `/blog/tips/${params.category}/${params.slug}`,
     image: article.coverImage,
     keywords: article.tags,
   });
 }
 
 const articleFaqs: Record<string, { question: string; answer: string }[]> = {
+  'turkey-visa-2026': [
+    { question: 'Нужна ли виза россиянам в Турцию?', answer: 'Нет, виза не требуется для пребывания до 60 дней. Это действует благодаря безвизовому соглашению между РФ и Турцией.' },
+    { question: 'Сколько может длиться пребывание без визы?', answer: 'До 60 дней в течение 180-дневного периода. Общее время пребывания не должно превышать 90 дней.' },
+    { question: 'Какой срок действия паспорта нужен?', answer: 'Паспорт должен быть действителен минимум 60 дней после окончания вашей поездки.' },
+    { question: 'Можно ли продлить пребывание в Турции?', answer: 'Да, можно продлить разрешение через Управление миграции Турции. Потребуется подтверждение финансов и цели пребывания.' },
+    { question: 'Нужна ли медицинская страховка?', answer: 'Медицинская страховка не обязательна, но рекомендуется для покрытия расходов на лечение в случае необходимости.' },
+  ],
   'egypt-tips-2026': [
     { question: 'Что взять с собой в Египет?', answer: 'Солнцезащитный крем SPF50+, средство от насекомых, пластиковые деньги, адаптер для розеток (тип C/F) и лёгкую закрытую одежду для экскурсий.' },
     { question: 'Безопасно ли пить воду в Египте?', answer: 'Водопроводную воду пить нельзя. Покупайте бутилированную воду (0.5 л ≈ $0.5) или берите питьевую воду в отеле.' },
@@ -36,17 +42,28 @@ const articleFaqs: Record<string, { question: string; answer: string }[]> = {
     { question: 'Сколько стоит поездка в Таиланд на 10 дней?', answer: 'В среднем 80 000–150 000 ₽ на человека с учётом перелёта, отеля 4★, питания и экскурсий.' },
     { question: 'Нужна ли виза в Таиланд?', answer: 'Безвизовый въезд для россиян до 30 дней. При необходимости продления — визараны или туристическая виза.' },
   ],
+  'turkey-2026-complete-guide': [
+    { question: 'Когда лучше ехать в Турцию?', answer: 'Если нужен классический пляжный отдых — конец весны до осени. Если важен комфорт без жары — май или сентябрь-октябрь.' },
+    { question: 'Какой курорт Турции выбрать с детьми?', answer: 'Белек, Сиде и некоторые отели Анталии и Аланьи с развитой инфраструктурой. Ищите песчаные пляжи, детские клубы и аквапарки.' },
+    { question: 'Нужна ли виза в Турцию в 2026?', answer: 'Нет, виза не требуется для пребывания до 90 дней. Загранпаспорт должен действовать минимум 4 месяца.' },
+    { question: 'Сколько денег брать в Турцию?', answer: 'При системе всё включено — бюджет на экскурсии, покупки и развлечения вне отеля. В среднем 300-700 $ на человека за неделю.' },
+    { question: 'Турция подходит для первой поездки за границу?', answer: 'Да, потому что направление понятное, массовое и удобное по логистике. Короткий перелет, русскоязычный персонал во многих отелях, отсутствие визы делают Турцию идеальным вариантом для первого выезда.' },
+  ],
+  'seasonal-menu-all-inclusive': [
+    { question: 'Почему меню отличается в разные месяцы?', answer: 'All Inclusive — это живая система, которая подстраивается под загрузку отеля, сезон и доступность продуктов. В высокий сезон отели могут позволить больше расходов на питание.' },
+    { question: 'Когда в отелях лучше еда в Турции?', answer: 'Июнь-сентябрь (первая половина). В это время максимальная загрузка, высокие бюджеты на питание, много местных фруктов и морепродуктов.' },
+    { question: 'AI или UAI — что выбрать в мае или октябре?', answer: 'В межсезонье выбирайте Ultra All Inclusive (UAI) — это страховка от сезонной экономии. Обычный AI в переходные месяцы может быть урезан.' },
+  ],
 };
 
 export default function TipPage({ params }: Props) {
   const article = articles.find(a => a.slug === params.slug && a.categorySlug === params.category);
   if (!article) notFound();
-  const siteUrl = process.env.SITE_URL || 'https://pro-tury.ru';
-  const pageUrl = `${siteUrl}/tips/${params.category}/${params.slug}`;
+  const siteUrl = process.env.SITE_URL || 'https://2shezlonga.ru';
+  const pageUrl = `${siteUrl}/blog/tips/${params.category}/${params.slug}`;
   const faqs = articleFaqs[params.slug] || [];
   const related = articles.filter(a => a.slug !== params.slug).slice(0, 3);
   const showBudgetCalc = params.slug.includes('budget') || params.slug.includes('phuket');
-  const showTipCalc = params.slug.includes('tips') || params.slug.includes('egypt');
 
   return (
     <>
@@ -58,7 +75,7 @@ export default function TipPage({ params }: Props) {
       {faqs.length > 0 && <JsonLd data={buildFaqSchema(faqs)} />}
       <JsonLd data={buildBreadcrumbSchema([
         { name: 'Главная', url: siteUrl },
-        { name: article.category, url: `${siteUrl}/tips/${params.category}` },
+        { name: article.category, url: `${siteUrl}/blog/tips/${params.category}` },
         { name: article.title, url: pageUrl },
       ])} />
 
@@ -83,17 +100,13 @@ export default function TipPage({ params }: Props) {
           <Image src={article.coverImage} alt={article.title} fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 768px" />
         </div>
 
-        <p className="text-lg text-gray-700 leading-relaxed mb-6">{article.excerpt}</p>
+        <p className="text-lg text-gray-700 leading-relaxed mb-8">{article.excerpt}</p>
 
-        <div className="prose prose-gray max-w-none">
-          <p className="text-gray-700 leading-relaxed">
-            Полный текст статьи подключается из CMS (Sanity, Strapi) или из <code>lib/data/articles.ts</code>. 
-            Разместите сюда MDX-контент или HTML-строку из headless CMS через <code>dangerouslySetInnerHTML</code>.
-          </p>
+        <div className="prose prose-gray max-w-none mb-8">
+          <div dangerouslySetInnerHTML={{ __html: article.content }} />
         </div>
 
         {showBudgetCalc && <BudgetCalculator />}
-        {showTipCalc && <TipCalculator />}
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 my-6">
@@ -113,7 +126,7 @@ export default function TipPage({ params }: Props) {
             <h2 className="text-xl font-bold mb-5">Похожие статьи</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {related.map(a => (
-                <Link key={a.slug} href={`/tips/${a.categorySlug}/${a.slug}`}
+                <Link key={a.slug} href={`/blog/tips/${a.categorySlug}/${a.slug}`}
                   className="bg-white rounded-xl shadow-card card-hover overflow-hidden group">
                   <div className="relative h-32">
                     <Image src={a.coverImage} alt={a.title} fill className="object-cover group-hover:scale-105 transition-transform" sizes="300px" />

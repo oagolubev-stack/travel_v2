@@ -41,8 +41,8 @@ export function buildArticleSchema({
     author: { "@type": "Person", name: authorName },
     publisher: {
       "@type": "Organization",
-      name: "Pro Туры",
-      logo: { "@type": "ImageObject", url: "https://pro-tury.ru/logo.png" },
+      name: "Турагентство 2 шезлонга",
+      logo: { "@type": "ImageObject", url: "https://2shezlonga.ru/logo.png" },
     },
   };
 }
@@ -148,5 +148,52 @@ export function buildBreadcrumbSchema(
       name: crumb.name,
       item: crumb.url,
     })),
+  };
+}
+
+// ── Tour (TouristTrip) ──
+export function buildTourSchema({
+  name,
+  description,
+  url,
+  image,
+  startDate,
+  endDate,
+  destination,
+  price,
+  currency = "RUB",
+  availability = "PreOrder",
+}: {
+  name: string;
+  description: string;
+  url: string;
+  image: string;
+  startDate?: string;
+  endDate?: string;
+  destination: string;
+  price: number;
+  currency?: string;
+  availability?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    name,
+    description,
+    url,
+    image,
+    touristAttraction: {
+      "@type": "TouristAttraction",
+      name: destination,
+    },
+    ...(startDate && { startDate }),
+    ...(endDate && { endDate }),
+    offers: {
+      "@type": "Offer",
+      url,
+      priceCurrency: currency,
+      price: price.toString(),
+      availability: `https://schema.org/${availability}`,
+    },
   };
 }
