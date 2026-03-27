@@ -45,7 +45,7 @@ export const countryImages: Record<string, SiteImage> = {
   },
   egipet: {
     key: 'egipet',
-    src: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=1200',
+    src: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200',
     alt: 'Египет — курорт Хургада',
     width: 1200, height: 600,
     theme: 'Египетский курорт. Красное море, коралловые рифы под водой или пирамиды на закате.',
@@ -87,7 +87,7 @@ export const countryImages: Record<string, SiteImage> = {
   },
   'sri-lanka': {
     key: 'sri-lanka',
-    src: 'https://images.unsplash.com/photo-1598432952427-f07c63f3d7b4?w=1200',
+    src: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200',
     alt: 'Шри-Ланка',
     width: 1200, height: 600,
     theme: 'Шри-Ланка. Чайные плантации, слоны в джунглях или будда.',
@@ -108,7 +108,7 @@ export const countryImages: Record<string, SiteImage> = {
   },
   kitay: {
     key: 'kitay',
-    src: 'https://images.unsplash.com/photo-1549300000-4ae0e4ed31d8?w=1200',
+    src: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200',
     alt: 'Китай',
     width: 1200, height: 600,
     theme: 'Китай. Великая стена, Шанхай ночью или традиционная архитектура.',
@@ -171,7 +171,7 @@ export const resortImages: Record<string, SiteImage> = {
   },
   hurghada: {
     key: 'hurghada',
-    src: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=800',
+    src: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800',
     alt: 'Хургада — Египет',
     width: 800, height: 450,
     theme: 'Хургада. Кораллы Красного моря под водой, пляж с зонтиками, закат над морем.',
@@ -206,7 +206,7 @@ export const articleImages: Record<string, SiteImage> = {
   },
   'egypt-tips-2026': {
     key: 'egypt-tips-2026',
-    src: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=800',
+    src: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800',
     alt: 'Лайфхаки для отдыха в Египте',
     width: 800, height: 450,
     theme: 'Египет — подводный мир, снорклинг, коралловые рыбы. Или рынок с сувенирами.',
@@ -234,7 +234,7 @@ export const articleImages: Record<string, SiteImage> = {
   },
   'seasonal-menu-all-inclusive': {
     key: 'seasonal-menu-all-inclusive',
-    src: 'https://images.unsplash.com/photo-1414235077418-3a2357dd4f8f?w=800',
+    src: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800',
     alt: 'Шведский стол в отеле',
     width: 800, height: 450,
     theme: 'Ресторан All-Inclusive. Роскошный шведский стол, разнообразие блюд, отельный ресторан.',
@@ -248,7 +248,7 @@ export const articleImages: Record<string, SiteImage> = {
   },
   'tours-with-kids-2026': {
     key: 'tours-with-kids-2026',
-    src: 'https://images.unsplash.com/photo-1488761681033-6461ffad8d80?w=800',
+    src: 'https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=800',
     alt: 'Туры с детьми',
     width: 800, height: 450,
     theme: 'Дети играют у моря, семья в отпуске, детская горка в аквапарке.',
@@ -262,7 +262,7 @@ export const articleImages: Record<string, SiteImage> = {
   },
   'when-to-go-egypt': {
     key: 'when-to-go-egypt',
-    src: 'https://images.unsplash.com/photo-1552529927-48fa240c9c84?w=800',
+    src: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800',
     alt: 'Когда ехать в Египет',
     width: 800, height: 450,
     theme: 'Египет — пирамиды на закате, или пляж в межсезонье (октябрь-ноябрь).',
@@ -297,14 +297,14 @@ export const articleImages: Record<string, SiteImage> = {
   },
   '5-star-vs-4-star-with-kids': {
     key: '5-star-vs-4-star-with-kids',
-    src: 'https://images.unsplash.com/photo-1596402184320-aac101d5cecb?w=800',
+    src: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800',
     alt: '5 звёзд vs 4 звезды с детьми',
     width: 800, height: 450,
     theme: 'Роскошный отель 5 звёзд с бассейном и анимацией для детей.',
   },
   'when-to-book-tour': {
     key: 'when-to-book-tour',
-    src: 'https://images.unsplash.com/photo-1526772249885-be475731c7ee?w=800',
+    src: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800',
     alt: 'Когда бронировать тур',
     width: 800, height: 450,
     theme: 'Календарь, ноутбук с сайтом тура, экономия — монеты или процент скидки.',
@@ -318,7 +318,7 @@ export const articleImages: Record<string, SiteImage> = {
 export const otdykhImages: Record<string, SiteImage> = {
   's-detmi': {
     key: 's-detmi',
-    src: 'https://images.unsplash.com/photo-1488761681033-6461ffad8d80?w=600',
+    src: 'https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=600',
     alt: 'Отдых с детьми',
     width: 600, height: 400,
     theme: 'Семья с детьми на пляже, дети в воде, счастливые лица.',
@@ -367,14 +367,14 @@ export const otdykhImages: Record<string, SiteImage> = {
   },
   'ekskursionnyy': {
     key: 'ekskursionnyy',
-    src: 'https://images.unsplash.com/photo-1499856871958-5b9357976b82?w=600',
+    src: 'https://images.unsplash.com/photo-1503220317375-aaad61436b1b?w=600',
     alt: 'Экскурсионный тур',
     width: 600, height: 400,
     theme: 'Достопримечательности: Колизей, Акрополь, Голубая мечеть — исторические места.',
   },
   'korotkiy': {
     key: 'korotkiy',
-    src: 'https://images.unsplash.com/photo-1526772249885-be475731c7ee?w=600',
+    src: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600',
     alt: 'Короткий отпуск',
     width: 600, height: 400,
     theme: 'Маленький чемодан, выходные в городе, уютный отель на 3 ночи.',
@@ -416,7 +416,7 @@ export const otdykhImages: Record<string, SiteImage> = {
 export const vygodnoImages: Record<string, SiteImage> = {
   'kogda-ehat': {
     key: 'kogda-ehat',
-    src: 'https://images.unsplash.com/photo-1552529927-48fa240c9c84?w=600',
+    src: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600',
     alt: 'Когда лучше ехать',
     width: 600, height: 400,
     theme: 'Календарь с курортом на фоне, солнечный пляж в нужный сезон.',
@@ -430,7 +430,7 @@ export const vygodnoImages: Record<string, SiteImage> = {
   },
   'rannee-bronirovanie': {
     key: 'rannee-bronirovanie',
-    src: 'https://images.unsplash.com/photo-1526772249885-be475731c7ee?w=600',
+    src: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600',
     alt: 'Раннее бронирование',
     width: 600, height: 400,
     theme: 'Ноутбук с сайтом бронирования, скидка 30%, уведомление о сохранении места.',
@@ -444,7 +444,7 @@ export const vygodnoImages: Record<string, SiteImage> = {
   },
   'layfhaki': {
     key: 'layfhaki',
-    src: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=600',
+    src: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600',
     alt: 'Лайфхаки туриста',
     width: 600, height: 400,
     theme: 'Смарт-чемодан, список лайфхаков, умный турист с телефоном в руке.',
