@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls /c/Users/oagol/2shezlonga/src/app/blog/hotels/compare/[resort])",
+      "Bash(node -e \"const content = require\\(''fs''\\).readFileSync\\(''src/lib/data/articles.ts'', ''utf8''\\); const match = content.match\\(/export const articles: Article\\\\[\\\\] = \\\\[\\(.*?\\)\\\\];/s\\); if\\(match\\) { try { const json = ''['' + match[1] + '']''; JSON.parse\\(json\\); console.log\\(''✓ JSON валиден''\\); } catch\\(e\\) { console.log\\(''✗ JSON ошибка:'', e.message.slice\\(0, 200\\)\\); } } else { console.log\\(''✗ Не найден массив articles''\\); }\")",
+      "Bash(npx tsc:*)",
+      "Bash(grep -A 2 \"const articleFaqs:\" src/app/blog/tips/[category]/[slug]/page.tsx)",
+      "Bash(tail -5 src/app/blog/tips/[category]/[slug]/page.tsx)",
+      "Bash(node -e \":*)",
+      "Bash(npm run:*)",
+      "Bash(NEXT_TELEMETRY_DISABLED=1 npx next build)"
+    ]
+  }
+}
