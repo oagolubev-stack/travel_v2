@@ -16,9 +16,9 @@ export const travelStyles = [
 ];
 
 export const proTours = [
-  { label: "Про страны", href: "/blog/destinations" },
-  { label: "Лайфхаки", href: "/blog/tips/general/egypt-tips-2026" },
-  { label: "Советы туристам", href: "/blog/tips/tips/phuket-budget-calculator" },
-  { label: "Обзоры отелей", href: "/blog/hotels/compare/kemer" },
-  { label: "Обзоры курортов", href: "/blog/destinations" },
+  { label: "Лайфхаки туриста", href: "/blog/vygodno/layfhaki" },
+  { label: "Куда поехать", href: "/blog/kuda" },
+  { label: "Выбери отдых", href: "/blog/otdykh" },
+  { label: "Отдыхаем выгодно", href: "/blog/vygodno" },
+  { label: "Сравнение отелей", href: "/blog/hotels/compare/kemer" },
 ];
