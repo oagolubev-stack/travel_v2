@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const BASE_URL = process.env.SITE_URL || "https://pro-tury.ru";
+const BASE_URL = process.env.SITE_URL || "https://2shezlonga.ru";
 
 export function buildMetadata({
   title,
@@ -18,7 +18,7 @@ export function buildMetadata({
   const url = `${BASE_URL}${path}`;
   const ogImage = image || `${BASE_URL}/images/og-default.jpg`;
   return {
-    title: `${title} | Pro Туры`,
+    title: `${title} | Турагентство 2 шезлонга`,
     description,
     keywords: keywords?.join(", "),
     alternates: { canonical: url },
@@ -26,7 +26,7 @@ export function buildMetadata({
       title,
       description,
       url,
-      siteName: "Pro Туры",
+      siteName: "Турагентство 2 шезлонга",
       images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
       locale: "ru_RU",
       type: "article",

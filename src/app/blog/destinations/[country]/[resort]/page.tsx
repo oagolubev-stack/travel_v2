@@ -9,7 +9,7 @@ import { HotelCard } from '@/components/widgets/hotel-card';
 import { FaqBlock } from '@/components/widgets/faq-block';
 import { JsonLd, buildPlaceSchema, buildFaqSchema, buildBreadcrumbSchema } from '@/components/seo/json-ld';
 import { buildMetadata } from '@/lib/seo';
-import { Breadcrumbs } from '../../../layout';
+import { Breadcrumbs } from '../../../breadcrumbs';
 
 interface Props { params: { country: string; resort: string } }
 
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return buildMetadata({
     title: `${dest.name} — обзор курорта ${dest.country} 2026`,
     description: dest.description.slice(0, 155),
-    path: `/destinations/${params.country}/${params.resort}`,
+    path: `/blog/destinations/${params.country}/${params.resort}`,
     image: dest.coverImage,
     keywords: [dest.name, dest.country, 'курорт', 'отдых', '2026'],
   });
@@ -30,8 +30,8 @@ export default function ResortPage({ params }: Props) {
   if (!dest) notFound();
   const hotels = getHotelsByResort(dest.slug);
   const related = getDestinationsByCountry(dest.countrySlug).filter(d => d.slug !== dest.slug);
-  const siteUrl = process.env.SITE_URL || 'https://pro-tury.ru';
-  const pageUrl = `${siteUrl}/destinations/${params.country}/${params.resort}`;
+  const siteUrl = process.env.SITE_URL || 'https://2shezlonga.ru';
+  const pageUrl = `${siteUrl}/blog/destinations/${params.country}/${params.resort}`;
 
   const faqs = [
     { question: `Когда лучше ехать в ${dest.name}?`, answer: `Лучший сезон для ${dest.name}: ${dest.bestSeason}. ${dest.climate}` },
@@ -45,14 +45,14 @@ export default function ResortPage({ params }: Props) {
       <JsonLd data={buildFaqSchema(faqs)} />
       <JsonLd data={buildBreadcrumbSchema([
         { name: 'Главная', url: siteUrl },
-        { name: 'Курорты', url: `${siteUrl}/destinations` },
-        { name: dest.country, url: `${siteUrl}/destinations/${params.country}` },
+        { name: 'Курорты', url: `${siteUrl}/blog/destinations` },
+        { name: dest.country, url: `${siteUrl}/blog/destinations/${params.country}` },
         { name: dest.name, url: pageUrl },
       ])} />
 
       <Breadcrumbs items={[
-        { label: 'Курорты', href: '/destinations' },
-        { label: dest.country },
+        { label: 'Куда поехать', href: '/blog/kuda' },
+        { label: dest.country, href: `/blog/kuda/${dest.countrySlug === 'turkey' ? 'turtsiya' : dest.countrySlug === 'egypt' ? 'egipet' : dest.countrySlug === 'thailand' ? 'tailand' : dest.countrySlug}` },
         { label: dest.name },
       ]} />
 
@@ -136,7 +136,7 @@ export default function ResortPage({ params }: Props) {
             <section>
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-xl font-bold">Лучшие отели {dest.name}</h2>
-                <Link href={`/hotels/compare/${dest.slug}`} className="text-accent text-sm font-medium hover:underline">
+                <Link href={`/blog/hotels/compare/${dest.slug}`} className="text-accent text-sm font-medium hover:underline">
                   Сравнить все →
                 </Link>
               </div>
@@ -154,7 +154,7 @@ export default function ResortPage({ params }: Props) {
           <div className="bg-accent rounded-2xl p-5 text-white">
             <h3 className="font-bold text-lg mb-2">Подобрать тур в {dest.name}</h3>
             <p className="text-white/80 text-sm mb-4">Найдём лучшие цены от проверенных туроператоров</p>
-            <Link href="https://pro-tury.ru" className="block bg-white text-accent font-semibold text-center py-2.5 rounded-xl hover:bg-gray-100 transition-colors">
+            <Link href="https://2shezlonga.ru" className="block bg-white text-accent font-semibold text-center py-2.5 rounded-xl hover:bg-gray-100 transition-colors">
               Подобрать тур
             </Link>
           </div>
@@ -164,7 +164,7 @@ export default function ResortPage({ params }: Props) {
               <ul className="space-y-2">
                 {related.map(r => (
                   <li key={r.slug}>
-                    <Link href={`/destinations/${r.countrySlug}/${r.slug}`}
+                    <Link href={`/blog/destinations/${r.countrySlug}/${r.slug}`}
                       className="flex items-center justify-between text-sm hover:text-accent transition-colors py-1">
                       <span>{r.name}</span>
                       <span className="text-gray-400">{r.bestSeason}</span>

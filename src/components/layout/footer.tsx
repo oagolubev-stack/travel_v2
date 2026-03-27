@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { Globe } from "lucide-react";
+import Image from "next/image";
 
 const topResorts = [
-  { label: "Кемер", href: "/destinations/turkey/kemer" },
-  { label: "Сиде", href: "/destinations/turkey/side" },
-  { label: "Аланья", href: "/destinations/turkey/alanya" },
-  { label: "Хургада", href: "/destinations/egypt/hurghada" },
-  { label: "Пхукет", href: "/destinations/thailand/phuket" },
+  { label: "Кемер", href: "/blog/destinations/turkey/kemer" },
+  { label: "Сиде", href: "/blog/destinations/turkey/side" },
+  { label: "Аланья", href: "/blog/destinations/turkey/alanya" },
+  { label: "Хургада", href: "/blog/destinations/egypt/hurghada" },
+  { label: "Пхукет", href: "/blog/destinations/thailand/phuket" },
 ];
 
 export function Footer() {
@@ -16,8 +16,14 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>
             <div className="mb-3 flex items-center gap-2 text-lg font-bold text-white">
-              <Globe size={20} className="text-accent" />
-              <span>Pro Туры</span>
+              <Image
+                src="/images/logo/logo-main.png"
+                alt="2 шезлонга"
+                width={24}
+                height={24}
+                className="h-6 w-auto"
+              />
+              <span>2 шезлонга</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Блог о выездном туризме. Обзоры курортов, сравнение отелей и
@@ -50,7 +56,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/hotels/compare/kemer"
+                  href="/blog/hotels/compare/kemer"
                   className="transition-colors hover:text-white"
                 >
                   Сравнение отелей Кемер
@@ -58,7 +64,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/tips/general/egypt-tips-2026"
+                  href="/blog/tips/general/egypt-tips-2026"
                   className="transition-colors hover:text-white"
                 >
                   Лайфхаки
@@ -66,7 +72,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/destinations"
+                  href="/blog/destinations"
                   className="transition-colors hover:text-white"
                 >
                   Все курорты
@@ -109,7 +115,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 border-t border-[#1f2937] pt-6 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Pro Туры. Все права защищены.
+          © {new Date().getFullYear()} Турагентство 2 шезлонга. Все права защищены.
         </div>
       </div>
     </footer>
