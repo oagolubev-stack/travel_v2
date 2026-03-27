@@ -43,7 +43,7 @@ export const kudaCountries: KudaCountry[] = [
       { name: 'Хургада', slug: 'hurghada', countrySlug: 'egypt' },
       { name: 'Шарм-эль-Шейх', slug: 'sharm-el-sheikh', countrySlug: 'egypt' },
     ],
-    articleSlugs: ['egypt-tips-2026', 'when-to-go-egypt'],
+    articleSlugs: ['when-to-go-egypt'],
     popular: true,
   },
   {
